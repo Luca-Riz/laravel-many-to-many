@@ -43,6 +43,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->tags);
+
         //validazione dei dati
         $request->validate([
             'title' => 'required|max:60',
@@ -77,6 +79,8 @@ class PostController extends Controller
 
         // salvare
         $new_post->save();
+
+        $new_post->tags()->attach($request->tags);
 
         return redirect()->route('admin.posts.index');
     }

@@ -20,7 +20,7 @@ class Post extends Model
     
     // crea relazione tabella post
     public function tags(){
-        return $this->belongsToMany('App/Tag');
+        return $this->belongsToMany('App\Tag');
     }
 }
 
