@@ -8,6 +8,7 @@ class Category extends Model
 {
     // protected $table = 'categories';
 
+    // crea relazione tabgella post
     public function post(){
         return $this->hasMany('App\Post');
     }
