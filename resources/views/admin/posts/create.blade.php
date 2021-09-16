@@ -74,7 +74,6 @@
           </span>
         @endforeach
 
-
       </div>
       {{-- fine selezione tags --}}
       
