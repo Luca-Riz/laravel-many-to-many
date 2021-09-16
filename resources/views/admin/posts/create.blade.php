@@ -60,6 +60,23 @@
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
       </div>
+
+      {{-- inizio selezione tags --}}
+      <div class="mb-3">
+
+        @foreach ($tags as $tag)
+          <span class="px-2">
+            <input type="checkbox" id="{{$tag->id}}" name="tags[]" value="{{$tag->id}}"
+              @if (in_array($tag->id, old('tags', [])))
+                checked 
+              @endif>
+            <label  for="{{$tag->id}}"> {{$tag->name}} </label>
+          </span>
+        @endforeach
+
+
+      </div>
+      {{-- fine selezione tags --}}
       
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
